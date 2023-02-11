@@ -1,0 +1,71 @@
+<!--
+<td class="discord-feedback">connected to discord ? {{true == this.connected_to_discord ? 'Yes' : 'No' }}</td>
+<td class="spotify-feedback">connected to spotify ? {{true == this.connected_to_spotify ? 'Yes' : 'No' }}</td>
+-->
+
+<div class="container">
+    <div class="service-box">
+        <img src="../../assets/Spotify_logo.png" alt="spotify" width="120" height="120" />
+        <div class="message-box">
+            <div *ngIf="this.connected_to_spotify==true">
+                <div>connected to spotify</div>
+            </div>
+            <div *ngIf="this.connected_to_spotify==false">
+                <div>not connected to spotify</div>
+                <button (click)="Connect_to_Spotify()" target="_blank" class="connect-button">connect to Spotify</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="service-box">
+        <img src="../../assets/discord-logo.png" alt="Discord" width="120" height="120" />
+        <div class="message-box">
+            <div *ngIf="this.connected_to_discord==true">
+                <div>connected to discord</div>
+            </div>
+            <div *ngIf="this.connected_to_discord==false">
+                <div>not connected to discord</div>
+                <button (click)="Connect_to_Discord()" target="_blank" class="connect-button">connect to discord</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="service-box">
+        <img src="../../assets/github-logo.png" alt="github" width="120" height="120" />
+        <div class="message-box">
+            <div *ngIf="this.connected_to_github==true">
+                <div>connected to github</div>
+            </div>
+            <div *ngIf="this.connected_to_github==false">
+                <div>not connected to github</div>
+                <button (click)="Connect_to_Github()" target="_blank" class="connect-button">connect to github</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="service-box">
+        <img src="../../assets/reddit-logo.png" alt="reddit" width="120" height="120" />
+        <div class="message-box">
+            <div *ngIf="this.connected_to_reddit==true">
+                <div>connected to reddit</div>
+            </div>
+            <div *ngIf="this.connected_to_reddit==false">
+                <div>not connected to reddit</div>
+                <a href="http://localhost:8080/reddit/login" target="_blank">connect to reddit</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-box">
+        <img src="../../assets/twitter-logo.png" alt="twitter" width="120" height="120" />
+        <div class="message-box">
+            <div *ngIf="this.connected_to_twitter==true">
+                <div>connected to twitter</div>
+            </div>
+            <div *ngIf="this.connected_to_twitter==false">
+                <div>not connected to twitter</div>
+                <button (click)="Connect_to_Twitter()" target="_blank" class="connect-button">connect to twitter</button>
+            </div>
+        </div>
+    </div>
+</div>

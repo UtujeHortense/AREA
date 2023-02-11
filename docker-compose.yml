@@ -1,0 +1,27 @@
+version: '3.3'
+services:
+  server:
+    build: "./server"
+    ports:
+      - "8080:8080"
+    networks:
+      - webappnetwork
+  mobile:
+    build: "./mobileApplication"
+    ports:
+      - "8001:8001"
+    links:
+      - "server:backend"
+    networks:
+      - webappnetwork
+  web:
+    build: "./web-app"
+    ports:
+      - "8081:80"
+    links:
+      - "server:backend"
+    networks:
+      - webappnetwork
+networks:
+  webappnetwork:
+    driver: bridge

@@ -1,0 +1,12 @@
+<div class="container" *ngFor="let area of areas">
+    <div class="area">
+        <h4>{{"when i " + area.action + ", I " + area.reaction}}</h4>
+        <div class="buttons_area">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <button class="delete-button">delete this AREA</button>
+        </div>
+    </div>
+</div>

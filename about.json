@@ -1,0 +1,64 @@
+{
+    "client": {
+        "host": "localhost:8081"
+    },
+    "server": {
+        "host": "localhost:8080",
+        "current_time": 1646126452,
+        "services": [{
+            "name": "weather",
+            "action": [{
+                "name": "weather/temp_change",
+                "description": "The temperature in a city changes, (every hours check)"
+            }, {
+                "name": "weather/wind_speed",
+                "description": "The wind speed in a city is higher than 50km/h, (every hours check)"
+            }, {
+                "name": "weather/uv_index",
+                "description": "The uv index in a city is higher than 5, (every hours check)"
+            }, {
+                "name": "weather/humidity",
+                "description": "The percentage humidity is higher than 70 for a city, (every hours check)"
+            }],
+            "reaction" : [{
+            }]
+        }, {
+            "name": "Twitter",
+            "action": [{
+                "name": "/twitter/action/tweet",
+                "description": "A user posts a tweet"
+            }, {
+                "name": "/twitter/action/mention",
+                "description": "The user is mentioned"
+            }],
+            "reaction": [{
+                "name": "/twitter/reaction/tweet",
+                "description": "The user posts a tweet"
+            }]
+        }, {
+            "name": "discord",
+            "action": [{
+            }],
+            "reaction": [{
+                "name": "/discord/dm",
+                "description": "Post a discord message in a channel discord"
+            }]
+        }, {
+            "name": "github",
+            "action": [{
+            }],
+            "reaction": [{
+                "name": "/github/issue",
+                "description": "The user creates an issue on github"
+            }]
+        }, {
+            "name": "spotify",
+            "action": [{
+            }],
+            "reaction": [{
+                "name": "/spotify/action/create_playlist",
+                "description": "The user create a playlist"
+            }]
+        }]
+    }
+}

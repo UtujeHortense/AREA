@@ -1,0 +1,43 @@
+<!--<td class="discord-feedback">connected to discord ? {{true == this.connected_to_discord ? 'Yes' : 'No' }}</td>-->
+
+<div class="auth-page">
+    <div class="container-page">
+
+        <h1 class="text-xs-center">{{'login' == this.loginMethod ? 'Login to your account' : 'User registration' }}</h1>
+        <div *ngIf="this.isConnected===false" class="container-page">
+            <div class="button-container">
+                <button class="form-button" (click)='setLoginMethod("login")'>login</button>
+                <button class="form-button" (click)='setLoginMethod("register")'>register</button>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="username" class="form-text">username</label>
+                    <input type="text" name="username" id="username" #username class="form-control" placeholder="username" />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-text">password</label>
+                    <input type="password" name="password" id="password" #password class="form-control" placeholder="password" />
+                </div>
+
+                <div class="form-group" *ngIf="this.loginMethod==='register'">
+                    <label for="confirm password" class="form-text">confirm password</label>
+                    <input type="password" name="confirm_password" id="confirm_password" #confirm_password
+                        class="form-control" placeholder="confirm password" />
+                </div>
+            </form>
+            <div class="form-bottom">
+                <button class="form-button" (click)="this.submit()">{{'login' == this.loginMethod ? 'login' : 'create account' }}</button>
+
+                <a href="http://localhost:8080/discord/login" target="_blank">
+                    <img src="../../assets/discord-login.png" alt="Discord" width="370" height="52" />
+                </a>
+            </div>
+
+        </div>
+        <div *ngIf="this.isConnected===true" class="container-page">
+            <h3>you are already connected as {{this.user}}</h3>
+            <button (click)="logout()" class="form-button">log out</button>
+        </div>
+    </div>
+</div>

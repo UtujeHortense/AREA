@@ -1,0 +1,55 @@
+<h2>Actions</h2>
+<div class="actions">
+    <div *ngFor="let action of actions">
+        <div (click)="this.onSelectLogoAction(action)">
+            <img src={{action.url}} alt={{action.brand}} width="120" height="120" style="cursor: pointer;">
+            <div *ngIf="this.selectedLogoAction == action">
+                <div class="area-list" *ngFor="let current of action.actions">
+                    <div class="area-elem" style="cursor: pointer;" (click)="this.onSelectAction(current)">
+                        {{current.name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="selectedAction && selectedAction.input_names" class="inputs_zone">
+    <div *ngIf="selectedAction.input_names[0]">
+        <input type="text" id="action_input1" name="action_input1" #action_input1
+            placeholder={{selectedAction.input_names[0]}}>
+    </div>
+    <div *ngIf="selectedAction.input_names[1]">
+        <input type="text" id="action_input2" name="action_input2" #action_input2
+            placeholder={{selectedAction.input_names[1]}}>
+    </div>
+</div>
+
+<h2>Reactions</h2>
+<div class="reactions">
+    <div *ngFor="let reaction of reactions">
+        <div (click)="this.onSelectLogoReaction(reaction)">
+            <img src={{reaction.url}} alt={{reaction.brand}} width="120" height="120" style="cursor: pointer;">
+            <div *ngIf="this.selectedLogoReaction == reaction">
+                <div class="area-list" *ngFor="let current of reaction.actions">
+                    <div class="area-elem" style="cursor: pointer;" (click)="this.onSelectReaction(current)">
+                        {{current.name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="selectedReaction && selectedReaction.input_names" class="inputs_zone">
+    <div *ngIf="selectedReaction.input_names[0]">
+        <input type="text" id="reaction_input1" name="reaction_input1" #reaction_input1
+            placeholder={{selectedReaction.input_names[0]}}>
+    </div>
+    <div *ngIf="selectedReaction.input_names[1]">
+        <input type="text" id="reaction_input2" name="reaction_input2" #reaction_input2
+            placeholder={{selectedReaction.input_names[1]}}>
+    </div>
+</div>
+<div *ngIf="selectedAction && selectedReaction">
+    <h4>{{selectedAction.name}}, I {{selectedReaction.name}}</h4>
+    <button (click)="apply()">apply</button>
+</div>

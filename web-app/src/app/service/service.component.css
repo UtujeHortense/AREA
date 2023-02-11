@@ -1,0 +1,40 @@
+.container {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 11em 11em;
+    gap: 0px 0px;
+    padding-left: 150px;
+}
+
+.service-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60%;
+    font-size: 19px;
+}
+
+.message-box {
+    margin-left: 40px;
+}
+
+.connect-button {
+    background-color: #64E397;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    padding: 9px 18px;
+    text-align: center;
+    width: 220px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+.connect-button:hover {
+    background-color: #34DA77;
+    transition-duration: 0.4s;
+}
